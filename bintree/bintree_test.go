@@ -1,9 +1,10 @@
-package main
+package bintree_test
 
 import (
 	"reflect"
 	"testing"
 
+	b "github.com/nevilleomangi/atg-solutions/bintree"
 	"golang.org/x/tour/tree"
 )
 
@@ -23,7 +24,7 @@ func TestWalker(t *testing.T) {
 
 		ch := make(chan int)
 		got := make([]int, 0)
-		go Walk(r, ch) // inorder traversal
+		go b.Walk(r, ch) // inorder traversal
 
 		for v := range ch {
 			got = append(got, v)
@@ -38,7 +39,7 @@ func TestWalker(t *testing.T) {
 
 	t.Run("passes tour test", func(t *testing.T) {
 		ch := make(chan int)
-		go Walk(tree.New(1), ch)
+		go b.Walk(tree.New(1), ch)
 
 		got := make([]int, 0)
 		for v := range ch {

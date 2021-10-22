@@ -1,4 +1,4 @@
-package main
+package bintree
 
 import (
 	"golang.org/x/tour/tree"
@@ -22,8 +22,4 @@ func Walk(t *tree.Tree, ch chan int) {
 
 	walker(t)
 	close(ch)
-}
-
-func main() {
-
 }

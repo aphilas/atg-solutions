@@ -1,4 +1,4 @@
-package rot13reader_test
+package rot13_test
 
 import (
 	"bytes"
@@ -6,12 +6,12 @@ import (
 	"strings"
 	"testing"
 
-	reader "github.com/nevilleomangi/atg-solutions/rot13-reader"
+	"github.com/nevilleomangi/atg-solutions/rot13"
 )
 
 func TestRot13Reader(t *testing.T) {
 	s := strings.NewReader("Lbh penpxrq gur pbqr!")
-	r := reader.Rot13Reader{s}
+	r := rot13.Rot13Reader{s}
 
 	buf := &bytes.Buffer{}
 	io.Copy(buf, &r)

@@ -6,8 +6,7 @@ import (
 
 type MyReader struct{}
 
-// Reader type that emits
-// an infinite stream of the ASCII character 'A'
+// Emits an infinite stream of the ASCII character 'A'
 func (r MyReader) Read(b []byte) (int, error) {
 	for i := range b {
 		b[i] = 'A'

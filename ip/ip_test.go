@@ -1,18 +1,20 @@
-package main
+package ip_test
 
 import (
 	"fmt"
 	"testing"
+
+	"github.com/nevilleomangi/atg-solutions/ip"
 )
 
 func TestIPStringer(t *testing.T) {
 	cases := []struct {
 		host string
-		ip   IPAddr
+		ip   ip.IPAddr
 		want string
 	}{
-		{"loopback", IPAddr{127, 0, 0, 1}, "127.0.0.1"},
-		{"googleDNS", IPAddr{8, 8, 8, 8}, "8.8.8.8"},
+		{"loopback", ip.IPAddr{127, 0, 0, 1}, "127.0.0.1"},
+		{"googleDNS", ip.IPAddr{8, 8, 8, 8}, "8.8.8.8"},
 	}
 
 	for _, c := range cases {
